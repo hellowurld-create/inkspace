@@ -1,8 +1,17 @@
+import NavBar from "@/components/NavBar";
+import Providers from "@/components/Providers";
+import {Toaster} from "@/components/ui/toaster";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import 'react-loading-skeleton/dist/skeleton.css';
+import 'simplebar-react/dist/simplebar.min.css'
+
+const montserrat = Montserrat({
+  subsets:["cyrillic"]
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +24,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="light">
+      <Providers>
+      <body className={cn(
+        'min-h-screen font-sans antialiased grainy',
+        montserrat.className
+      )}>
+        <NavBar/>
+          {children}
+          <Toaster/>
+        </body>
+        </Providers>
     </html>
   );
 }
