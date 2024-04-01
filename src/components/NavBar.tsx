@@ -4,6 +4,7 @@ import { ArrowRight, Pen, Pencil } from "lucide-react"
 import { buttonVariants } from "./ui/button"
 import {LoginLink, RegisterLink, getKindeServerSession} from '@kinde-oss/kinde-auth-nextjs/server'
 import UserAccountNav from "./UserAccountNav"
+import MobileNav from "./MobileNav"
 
 const NavBar = () => {
 
@@ -21,7 +22,7 @@ const NavBar = () => {
                         </span>
                     </Link>
 
-                    {/* Add mobile navbar */}
+                    <MobileNav isAuth={ !!user } />
 
                     <div className="hidden items-center space-x-4 sm:flex">
                         {

@@ -8,8 +8,13 @@ import { useState } from "react"
 import Skeleton from 'react-loading-skeleton'
 import UploadButton from "./UploadButton"
 import { Button } from "./ui/button"
+import { getUserSubscriptionPlan } from "@/lib/stripe"
 
-const DashBoard = () => {
+interface PageProps{
+    subscriptionPlan: Awaited<ReturnType<typeof getUserSubscriptionPlan>>
+}
+
+const DashBoard = ({subscriptionPlan}: PageProps) => {
     const [currentDeletedFile,setCurrentDeletedFile] = useState<string | null>(null)
     
     const utils = trpc.useContext();
@@ -36,7 +41,7 @@ const DashBoard = () => {
                     My Files
                 </h1>
 
-                <UploadButton />
+                <UploadButton isSubscribed={subscriptionPlan.isSubscribed} />
             </div>
 
             {/* display user files */}

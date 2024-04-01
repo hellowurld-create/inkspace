@@ -13,15 +13,15 @@ export const PLANS = [
         }
     },
       {
-        name: 'Premium',
-        slug: 'premium',
+        name: 'Pro',
+        slug: 'pro',
         quota: 50,
         pagePerPdf: 25,
         price: {
             amount: 5000,
             priceIds: {
-                test: 'price_1Oq3kGB4jpAyzhC8V60QuRDX',
-                production: 'price_1Oq3kGB4jpAyzhC8V60QuRDX',
+                test: 'price_1OzqaOF49jWzWhCv8fRhwvpi',
+                production: 'price_1OzqaOF49jWzWhCv8fRhwvpi',
             }
         }
     }

@@ -45,9 +45,9 @@ const Page = () => {
       ],
     },
     {
-      plan: 'Premium',
+      plan: 'Pro',
       tagline: 'For larger projects with higher needs.',
-      quota: PLANS.find((p) => p.slug === 'premium')!.quota,
+      quota: PLANS.find((p) => p.slug === 'pro')!.quota,
       features: [
         {
           text: '25 pages per PDF',
@@ -96,11 +96,11 @@ const Page = () => {
                               
                               return (
                                   <div key={plan} className={cn('relative rounded-2xl bg-white shadow-lg', {
-                                  'border-2 border-zinc-800 shadow-zinc-200': plan === 'Premium',
-                                  'border border-zinc-200': plan !== 'Premium'
+                                  'border-2 border-zinc-800 shadow-zinc-200': plan === 'Pro',
+                                  'border border-zinc-200': plan !== 'Pro'
                               })}>
                                   {
-                                      plan === 'Premium' && (
+                                      plan === 'Pro' && (
                                           <div className="absolute -top-5 left-0 right-0 mx-auto w-32 rounded-full bg-gradient-to-r from-zinc-800 to-slate-400 px-3 py-2 text-sm font-medium text-white">
                                               Upgrade now
                                           </div>
